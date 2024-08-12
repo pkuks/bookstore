@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "1f952492-838b-4948-8585-a31512a85b15",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37552411"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/addBook",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "dummy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\": \"1002-ABC\",\r\n    \"title\": \"Spring Dev\",\r\n    \"publicationYear\": 2002,\r\n    \"price\": 12.98,\r\n    \"genre\":\"Technology\",\r\n    \"authors\":[\r\n        {\"name\": \"Claudia\",\"dob\": \"1996-03-05\"},\r\n        {\"name\": \"Bob\",\"dob\": \"1992-06-07\"}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/addBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"addBook"
+					]
+				},
+				"description": "Add Book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/fetchBookByTitleAndAuthorName?title=Head First Java&name=Kathy Sierra",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "dummy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fetchBookByTitleAndAuthorName?title=Head First Java&name=Kathy Sierra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fetchBookByTitleAndAuthorName"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Head First Java"
+						},
+						{
+							"key": "name",
+							"value": "Kathy Sierra"
+						}
+					]
+				},
+				"description": "Fetch Book By Title and Author Name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/fetchBookByTitleOrAuthorName?title=The Spy Coast&name=Kathy Sierra",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dummy",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fetchBookByTitleOrAuthorName?title=The Spy Coast&name=Kathy Sierra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fetchBookByTitleOrAuthorName"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "The Spy Coast"
+						},
+						{
+							"key": "name",
+							"value": "Kathy Sierra"
+						}
+					]
+				},
+				"description": "Fetch Book By Title or Author Name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/updateBook",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "dummy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\": \"1002-ABC\",\r\n    \"title\": \"Spring Dev123\",\r\n    \"publicationYear\": 2002,\r\n    \"price\": 12.98,\r\n    \"genre\":\"Technology\",\r\n    \"authors\":[\r\n        {\"name\": \"Claudia\",\"dob\": \"1996-03-05\"},\r\n        {\"name\": \"Bob12\",\"dob\": \"1992-06-07\"}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/updateBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"updateBook"
+					]
+				},
+				"description": "Update Book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/deleteBook?isbn=166251512X",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "dummy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/deleteBook?isbn=166251512X",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deleteBook"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "isbn",
+							"value": "166251512X"
+						}
+					]
+				},
+				"description": "Delete Book by ISBN"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/authenticate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "dummy",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "Authenticate a user and provide JWT Token"
+			},
+			"response": []
+		}
+	]
+}
